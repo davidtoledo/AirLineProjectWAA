@@ -1,10 +1,8 @@
 package david.mum.edu.servlet;
 
-import cs545.airline.App;
 import cs545.airline.dao.AirlineDao;
 import cs545.airline.dao.FlightDao;
 import cs545.airline.model.Airline;
-import cs545.airline.model.Flight;
 import cs545.airline.service.AirlineService;
 import cs545.airline.service.FlightService;
 import java.io.IOException;
