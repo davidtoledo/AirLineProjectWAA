@@ -20,8 +20,8 @@ public class AirportWS {
     @Produces({MediaType.APPLICATION_JSON})
     @Path("findAll")            
     public List <Airport> findAll() {
-        // return airportService.findAll();
-        return getSimulatedData();
+        return airportService.findAll();
+        //return getSimulatedData();
     }
     
     @GET

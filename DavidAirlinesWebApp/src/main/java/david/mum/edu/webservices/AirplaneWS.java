@@ -20,8 +20,8 @@ public class AirplaneWS {
     @Produces({MediaType.APPLICATION_JSON})
     @Path("findAll")        
     public List <Airplane> findAll() {
-        // return airplaneService.findAll();
-        return getSimulatedData();
+        return airplaneService.findAll();
+        // return getSimulatedData();
     }
     
     @GET

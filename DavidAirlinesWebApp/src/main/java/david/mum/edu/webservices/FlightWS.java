@@ -22,10 +22,10 @@ public class FlightWS {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("findAll")                
+    @Path("findAll")
     public List<Flight> findAll() {
-        // return flightService.findAll();
-        return getSimulatedData();
+        return flightService.findAll();
+        // return getSimulatedData();
     }
     
     @GET

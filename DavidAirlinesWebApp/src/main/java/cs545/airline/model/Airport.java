@@ -1,10 +1,12 @@
 package cs545.airline.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -22,10 +24,14 @@ public class Airport {
 	private String name;
 	private String city;
 	private String country;
-	@OneToMany(mappedBy = "destination")
+	
+        @OneToMany(mappedBy = "destination", fetch = FetchType.EAGER)
+        @JsonBackReference
 	@OrderBy("arrivalDate, arrivalTime")
 	private List<Flight> arrivals = new ArrayList();
-	@OneToMany(mappedBy = "origin")
+	
+        @OneToMany(mappedBy = "origin")
+        @JsonBackReference
 	@OrderBy("departureDate, departureTime")
 	private List<Flight> departures = new ArrayList();
 

@@ -27,7 +27,7 @@ public class Flight {
 	@Temporal(TemporalType.TIME)
 	private Date arrivalTime = new Date();
 	@ManyToOne(cascade = CascadeType.PERSIST)
-	private Airline airline;
+	private Airline airline = new Airline();
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Airport origin = new Airport();
 	@ManyToOne(cascade = CascadeType.PERSIST)

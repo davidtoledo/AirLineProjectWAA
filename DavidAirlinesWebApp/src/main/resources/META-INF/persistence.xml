@@ -11,7 +11,7 @@
 
 		<properties>
 			<property name="hibernate.connection.driver_class" value="org.h2.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:h2:~/test;MVCC=TRUE;DB_CLOSE_ON_EXIT=TRUE;FILE_LOCK=NO" />
+			<property name="hibernate.connection.url" value="jdbc:h2:~/test;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE" />
 			<property name="hibernate.connection.username" value="sa" />
 			<property name="hibernate.connection.password" value="sa" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />

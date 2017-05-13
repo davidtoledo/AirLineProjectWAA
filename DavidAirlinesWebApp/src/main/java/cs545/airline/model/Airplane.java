@@ -1,10 +1,12 @@
 package cs545.airline.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -23,7 +25,9 @@ public class Airplane {
 	private String serialnr;
 	private String model;
 	private int capacity;
-	@OneToMany(mappedBy="airplane")
+        
+	@OneToMany(mappedBy="airplane", fetch = FetchType.EAGER)
+        @JsonBackReference
 	@OrderBy("departureDate, departureTime")
 	private List <Flight> flights = new ArrayList <> ();
 

@@ -22,8 +22,8 @@ public class AirlineWS {
     public List <Airline> findAll() throws Exception {
         
         // Calling the service layer
-        // return airlineService.findAll();
-        return getSimulatedData();
+        return airlineService.findAll();
+        //return getSimulatedData();
     }
     
     @GET
