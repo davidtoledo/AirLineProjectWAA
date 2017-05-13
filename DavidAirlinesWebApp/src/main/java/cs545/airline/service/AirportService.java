@@ -4,7 +4,6 @@ import java.util.List;
 
 import cs545.airline.dao.AirportDao;
 import cs545.airline.model.Airport;
-import cs545.airline.model.Flight;
 
 public class AirportService {
 
@@ -28,20 +27,20 @@ public class AirportService {
 		return airportDao.update(airport);
 	}
 		
-	public Airport find(Airport airport) {
-		return airportDao.findOne(airport.getId());
+	public Airport find(long id) {
+		return airportDao.findOne(id);
 	}
 
 	public Airport findByCode(String airportcode) {
 		return airportDao.findOneByCode(airportcode);
 	}
 
-	public List<Airport> findByArrival(Flight flight) {
-		return airportDao.findByArrival(flight.getId());
+	public List<Airport> findByArrival(long flightID) {
+		return airportDao.findByArrival(flightID);
 	}
 
-	public List<Airport> findByDeparture(Flight flight) {
-		return airportDao.findByDeparture(flight.getId());
+	public List<Airport> findByDeparture(long flightID) {
+		return airportDao.findByDeparture(flightID);
 	}
 
 	public List<Airport> findByCity(String city) {

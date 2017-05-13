@@ -26,10 +26,10 @@ public class AppConfig extends Application {
         
         resources.add(org.glassfish.jersey.jackson.JacksonFeature.class);
         resources.add(david.mum.edu.app.JsonProvider.class);
-        resources.add(david.mum.edu.webservices.MessageWS.class);
-        resources.add(david.mum.edu.webservices.PersonWS.class);
         resources.add(david.mum.edu.webservices.AirlineWS.class);
         resources.add(david.mum.edu.webservices.AirplaneWS.class);
+        resources.add(david.mum.edu.webservices.AirportWS.class);
+        resources.add(david.mum.edu.webservices.FlightWS.class);
         
         System.out.println("REST configuration ended successfully.");
         

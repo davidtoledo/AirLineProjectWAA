@@ -33,14 +33,18 @@
                
                <li><a href="<%=request.getContextPath() %>/ws/airline/findAll"><%=request.getContextPath() %>/ws/airline/findAll</a></li>
                <li><a href="<%=request.getContextPath() %>/ws/airplane/findAll"><%=request.getContextPath() %>/ws/airplane/findAll</a></li>
+               <li><a href="<%=request.getContextPath() %>/ws/airport/findAll"><%=request.getContextPath() %>/ws/airport/findAll</a></li>
+               <li><a href="<%=request.getContextPath() %>/ws/flight/findAll"><%=request.getContextPath() %>/ws/flight/findAll</a></li>
                <br><br><br>
                
-	       <li><a href="<%=request.getContextPath() %>/ws/message"><%=request.getContextPath() %>/ws/message</a></li>
+	       <!--
+               <li><a href="<%=request.getContextPath() %>/ws/message"><%=request.getContextPath() %>/ws/message</a></li>
 	       <li><a href="<%=request.getContextPath() %>/ws/message/ping"><%=request.getContextPath() %>/ws/message/ping</a></li>
 	       <li><a href="<%=request.getContextPath() %>/ws/person/get"><%=request.getContextPath() %>/ws/person/get</a></li>
                <br><br>
                <li><button id="postPerson">Post Person</button></li>
                <li><button id="postMessage">Post Message</button></li>
+               -->
 	   </ul>
            
     </body>
