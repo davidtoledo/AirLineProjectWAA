@@ -1,2 +1,2 @@
 # Spring Boot Web Application
-Web application consumer
+Web application Spring REST API consumer
