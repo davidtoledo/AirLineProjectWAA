@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    
+</head>
+<body>
+
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/products}">Products</a></li>
+                        <li sec:authorize="hasAuthority('ROLE_ADMIN')"><a href="#" th:href="@{/users}">Users</a></li>
+                        <li sec:authorize="hasAuthority('ROLE_ADMIN')"><a href="#" th:href="@{/orders}">Orders</a></li>
+                        <li sec:authorize="isAuthenticated()"><a href="#" th:href="@{/updateProfile}">Update Profile</a></li>
+                        <li sec:authorize="isAuthenticated()"><a href="#" th:href="@{/logout}">Logout</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <div class="row text-center">
+                <div class="">
+                    <h2>David Coffee Shop Web Application</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <img width="220" th:src="@{/images/coffeeBrasil.png}"/>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

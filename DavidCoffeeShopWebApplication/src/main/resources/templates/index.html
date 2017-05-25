@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>David Coffee Shop Web Application</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <center>
+        
+        <div sec:authorize="isAnonymous()">Anonymous User Activated</div>
+                
+        <div sec:authorize="hasAuthority('ROLE_ADMIN')">ROLE_ADMIN</div>
+        <div sec:authorize="hasAuthority('ROLE_USER')">ROLE_USER</div>
+        
+        <font color="red"><h3 th:text="${error}"></h3></font>
+        <font color="green"><h3 th:text="${msg}"></h3></font>
+        
+        <div sec:authorize="!isAuthenticated()">
+            <form th:action="@{/perform_login}" method="POST">
+                <input type="text" name="email" placeholder="E-MAIL" class="login" /><br/><br/>
+                <input type="password" name="password" placeholder="PASSWORD" class="login" /><br/><br/>
+                <input type="submit" value="Login"/>
+            </form>
+        </div>
+        
+        <div sec:authorize="isAuthenticated()">
+            The User was Authenticated via WebService
+            <br/><br/>
+            <a href="#" th:href="@{/logout}">
+                <input type="button" value="Logout"/>
+            </a>                
+        </div>
+        
+        <div sec:authorize="!isAuthenticated()">
+            <br/>
+            <a href="#" th:href="@{/user/new}">
+                New User? Click here to register
+            </a>
+        </div>
+        
+    </center>
+</div>
+</body>
+</html>

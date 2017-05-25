@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>David Coffee Shop Web Application</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <form th:action="@{/checkout}" method="post">
+    <div th:if="${not #lists.isEmpty(users)}">
+        <h2>User List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>E-mail</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>View</th>
+                <th sec:authorize="hasAuthority('ROLE_ADMIN')">Edit</th>
+                <th sec:authorize="hasAuthority('ROLE_ADMIN')">Delete</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}"><a href="/user/${user.id}">Id</a></td>
+                <td th:text="${user.email}">e-mail</td>
+                <td th:text="${user.person.firstName}">first name</td>
+                <td th:text="${user.person.lastName}">last name</td>
+                <td th:text="${user.person.phone}">e-mail</td>
+                <td th:text="${user.userrole}">Role</td>
+                <td><a th:href="${'/user/' + user.id}">View</a></td>
+                <td sec:authorize="hasAuthority('ROLE_ADMIN')"><a th:href="${'/user/edit/' + user.id}">Edit</a></td>
+                <td sec:authorize="hasAuthority('ROLE_ADMIN')"><a th:href="${'/user/delete/' + user.id}">Delete</a></td>
+            </tr>
+        </table>
+        
+        <div class="row">
+            
+            <empty sec:authorize="hasAuthority('ROLE_ADMIN')">
+                <a href="#" th:href="@{/user/newProfile}">
+                    <button type="button" class="btn btn-default">Add New User</button>
+                </a>
+            </empty>
+            
+        </div>
+        
+        <br/><br/>
+
+    </div>
+    </form>
+</div>
+
+</body>
+</html>
